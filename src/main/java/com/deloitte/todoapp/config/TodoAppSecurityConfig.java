@@ -31,6 +31,11 @@ public class TodoAppSecurityConfig {
             .permitAll()
             .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
             .logoutSuccessUrl("/login");
+        http.csrf()
+        	.disable();
+        http.headers()
+        	.frameOptions()
+        	.disable();
         return http.build();
     }
 
