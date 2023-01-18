@@ -15,11 +15,11 @@ public class TodoController {
 
 	@Autowired
 	private TodoTaskService todoTaskService;
-	
+
 	@Autowired
 	private TodoUtil todoUtil;
 
-	@GetMapping("/login")
+	@RequestMapping("/login")
 	public String login() {
 		return "login";
 	}
@@ -31,10 +31,10 @@ public class TodoController {
 		return modelAndView;
 	}
 
-	  @RequestMapping("/login-error")
-	  public String loginError(Model model) {
-	    model.addAttribute("loginError", true);
-	    return "login.html";
-	  }
-	  
+	@RequestMapping("/login-error")
+	public String loginError(Model model) {
+		model.addAttribute("loginError", true);
+		return "login.html";
+	}
+
 }
